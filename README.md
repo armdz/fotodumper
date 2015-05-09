@@ -2,6 +2,10 @@
 Download entirely http://fotolog.com account. Photos, and comments, ready to parse and visualize.
 This script parses the html code of fotolog, and download the images and create a JSON with the data.
 
+ALSO INCLUDES "protolog" a very simple html fotolog like visualizer !!!!!!!!!!111
+
+The downloaded files are in a folder thats is named as the fotolog account, with all the files inside.
+
 # USE
 its made with node.js, 2 params:
 
