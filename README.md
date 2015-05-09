@@ -6,7 +6,7 @@ ALSO INCLUDES "protolog" a very simple html fotolog like visualizer !!!!!!!!!!11
 
 The downloaded files are in a folder thats is named as the fotolog account, with all the files inside.
 
-# USE
+# USE (template and node_modules folders, ARE NEEDED)
 its made with node.js, 2 params:
 
 node fotodump.js USERNAME FIRST_PHOTO_ID
