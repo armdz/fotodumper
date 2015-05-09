@@ -15,5 +15,6 @@ to obtain the FIRST_PHOTO_ID you need to go to the fotolog, and go to the first 
 
 # NOTES
 i made this in case fotologs stop his activity, and i like to preserve that teen part of my life.
+THE CODE IS VERY DIRTY, BUT WORKS!
 
 http://armdz.com
