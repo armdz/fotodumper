@@ -15,6 +15,21 @@ var div_otra_foto_header = "<div class='otra_foto_div'>";
 function loadData()
 {
 
+	//	keys
+	//	http://stackoverflow.com/a/6504984
+
+	 $("body").keypress(function(e){
+	 	
+        if(e.which == 113)
+        {
+			foto_prev();
+        }else if(e.which == 119)
+        {	
+        	foto_next();
+        }
+    });
+	//
+
 	var _id = getUrlVars()["id"];
 	json_data =data_fotolog;
 
@@ -99,6 +114,8 @@ function showFoto(id)
 	}
 	
 }
+
+
 
 function foto_next()
 {	
