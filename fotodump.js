@@ -9,7 +9,7 @@ var output_data = [];
 var fotolog = process.argv[2];
 var id_foto = process.argv[3];
 
-//10548928
+
 dump_foto(fotolog,id_foto);
 
 function dump_foto(fotolog,foto_id)
@@ -107,10 +107,42 @@ function dump_foto(fotolog,foto_id)
 
     download_image(foto_data["imagen_path"], full_path_imagenes+imagen_nombre, function(){
       //  listo
+
+
       output_data.push(foto_data);
 
       if(foto_data["proxima"] != undefined/*&& output_data.length < 2*/)
       {
+        var salida_total = new Object();
+        salida_total["fotolog"] = fotolog;
+        salida_total["fotos"] = output_data;
+        
+        var outputFilename = fotolog + "/data.json";
+
+        jf.writeFile(outputFilename, salida_total, function(err) {
+          if(err == null)
+          {
+            fs.copy("template/",fotolog +"/", function (err) {
+              if (err) {
+                console.log("error moving files");
+              } else {
+                jf.readFile(fotolog+"/data.json",function(err,obj){
+                  var json = obj;
+                  var total_fotos = obj["fotos"].length;
+                  var fotos = obj["fotos"];
+
+                  var j_s = JSON.stringify(json);
+                  var variable_json = "var data_fotolog = " + j_s + ";";
+
+                  fs.writeFile(fotolog + '/web/js/fotolog_data.js', variable_json, function (err) {
+                  if (err) return console.log(err);
+                    console.log("ALL DONE MAI SIR");
+                  });
+                });
+              }
+            });
+          }
+        });
         dump_foto(fotolog,foto_data["proxima"]);
       }else{
         
@@ -139,21 +171,14 @@ function dump_foto(fotolog,foto_id)
                   if (err) return console.log(err);
                     console.log("DONE (L) !");
                   });
-
                 });
               }
             });
           }
         });
-
-
-
       }
     });
-
-    
   });
-
 }
 
 function borrar_todo(de,que,por)
@@ -167,7 +192,9 @@ function borrar_todo(de,que,por)
 
 var download_image = function(uri, filename, callback){
   request.head(uri, function(err, res, body){
-    request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+  
+     request(uri).pipe(fs.createWriteStream(filename)).on('close', callback,"lolo");
+  
   });
 };
 
