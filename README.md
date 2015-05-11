@@ -6,7 +6,7 @@ ALSO INCLUDES "protolog" a very simple html fotolog like visualizer !!!!!!!!!!11
 
 The downloaded files are in a folder thats is named as the fotolog account, with all the files inside.
 
-# USE
+# USE (template and node_modules folders, ARE NEEDED)
 its made with node.js, 2 params:
 
 node fotodump.js USERNAME FIRST_PHOTO_ID
@@ -15,5 +15,6 @@ to obtain the FIRST_PHOTO_ID you need to go to the fotolog, and go to the first 
 
 # NOTES
 i made this in case fotologs stop his activity, and i like to preserve that teen part of my life.
+THE CODE IS VERY DIRTY, BUT WORKS!
 
 http://armdz.com
