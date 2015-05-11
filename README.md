@@ -17,4 +17,8 @@ to obtain the FIRST_PHOTO_ID you need to go to the fotolog, and go to the first 
 i made this in case fotologs stop his activity, and i like to preserve that teen part of my life.
 THE CODE IS VERY DIRTY, BUT WORKS!
 
+# KEYS
+
+[new feature!!!!!!!!] use 'q' and 'w' to navigate the photos withouth f*cking clicks!
+
 http://armdz.com
